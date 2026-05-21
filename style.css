@@ -1,0 +1,305 @@
+/* =========================================
+   LUXURY PERFUME WEBSITE STYLESHEET
+   ========================================= */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   ROOT VARIABLES
+   ========================================= */
+:root {
+    --primary-color: #111111;
+    --secondary-color: #d4af37;
+    --light-gold: #f5e6b3;
+    --white-color: #ffffff;
+    --gray-color: #777777;
+    --light-bg: #f8f8f8;
+    --dark-bg: #1a1a1a;
+
+    --heading-font: 'Cormorant Garamond', serif;
+    --body-font: 'Montserrat', sans-serif;
+
+    --transition: all 0.3s ease;
+    --shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: beige;
+    color: dark navy;
+    line-height: 1.7;
+}
+
+h1, h2{
+    color: #d4af37;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray-color);
+    margin-bottom: 50px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(17, 17, 17, 0.95);
+    z-index: 1000;
+    padding: 18px 0;
+    transition: var(--transition);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--white-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)),
+                url('images/image.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 5rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid var(--secondary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+.about {
+    padding: 100px 0;
+    background: var(--light-bg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--gray-color);
+}
+
+/* =========================================
+   PRODUCTS SECTION
+   ========================================= */
+.products {
+    padding: 100px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    overflow: hidden;
+}
+
+.product-image img {
+    transition: var(--transition);
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+}
+
+.price {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   TESTIMONIAL SECTION
+   ========================================= */
+.testimonials {
+    background: var(--dark-bg);
+    color: var(--white-color);
+    text-align: center;
+}
+
+.testimonial-card {
+    max-width: 800px;
+    margin: auto;
+}
+
+.testimonial-card p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #e2e8f0;
+}
+
+.testimonial-card h4 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+:root{
+    --dark-bg: #0f172a;
+    --white-color: #f8fafc;
+    --secondary-color: #38bdf8;
+    --muted-text: #94a3b8;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact- form input,
+.contact-form text,
+.contact-form button{
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+}
